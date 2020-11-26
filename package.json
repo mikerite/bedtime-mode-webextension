@@ -1,0 +1,25 @@
+{
+  "name": "mikerite-bedtime-mode-webextension",
+  "version": "1.0.0",
+  "description": "A Firefox extension that implements bedtime mode.",
+  "author": "Michael Wright",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "web-ext build --overwrite-dest",
+    "format": "prettier --list-different --no-config **/*.js",
+    "test": "mocha",
+    "lint": "eslint .",
+    "start": "web-ext run --browser-console --start-url file:./test/test.html",
+    "pretest": "npm run build",
+    "ci": "npm install && npm run lint && npm run format && npm test"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "geckodriver": "^1.21.0",
+    "mocha": "^8.2.1",
+    "prettier": "^2.2.0",
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "web-ext": "^5.4.0"
+  }
+}
